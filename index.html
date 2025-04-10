@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IMMORTAL | Login</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Star Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <div class="login-content">
+            <h1 class="game-title">IMMORTAL</h1>
+            <button class="discord-login-btn" id="discordLogin">
+                <i class="fab fa-discord"></i>
+                LOGIN WITH DISCORD
+            </button>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" id="dashboard">
+        <!-- Notification System -->
+        <div class="notification-container">
+            <button class="notification-btn" id="notificationBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge hidden" id="notificationBadge">0</span>
+            </button>
+            <div class="notification-popup" id="notificationPopup">
+                <div class="notification-header">
+                    <span>Notifications</span>
+                    <button class="notification-close" id="notificationClose">&times;</button>
+                </div>
+                <div class="notification-content" id="notificationContent">
+                    <div class="notification-item">
+                        <div class="notification-title">Welcome to IMMORTAL</div>
+                        <div class="notification-time">Just now</div>
+                        <div class="notification-message">Thank you for joining our community!</div>
+                    </div>
+                </div>
+                <div class="notification-footer">
+                    <button class="notification-nav-btn" id="prevNotification" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <button class="notification-nav-btn" id="nextNotification">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="sidebar-header">
+                <div class="sidebar-title">
+                    <i class="fas fa-gamepad"></i>
+                    <span>IMMORTAL</span>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-bullseye"></i>
+                            <span>Hits</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-video"></i>
+                            <span>Tutorials</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-tools"></i>
+                            <span>Tools</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <button class="mobile-menu-toggle hidden" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Dashboard</h1>
+                <div class="user-menu">
+                    <div class="profile-dropdown">
+                        <img src="" alt="User Avatar" class="user-avatar" id="userAvatar">
+                        <div class="profile-menu" id="profileMenu">
+                            <a href="#" id="profileBtn">
+                                <i class="fas fa-user"></i> Profile 
+                            </a>
+                            <a href="#" class="logout" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content" id="dashboardContent">
+                <h1 class="game-title-retro">IMMORTAL</h1>
+                <h2>Welcome back, <span id="username">User</span>!</h2>
+                <p>This is your dark glass-themed dashboard with red accents.</p>
+                
+                <!-- Admin Notification Panel -->
+                <div class="admin-notification-panel hidden" id="adminNotificationPanel">
+                    <h3><i class="fas fa-bell"></i> Admin Notification Center</h3>
+                    <div class="form-group">
+                        <label for="notificationTitle">Title</label>
+                        <input type="text" id="notificationTitle" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="notificationMessage">Message</label>
+                        <textarea id="notificationMessage" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="notificationTime">Display Time</label>
+                        <select id="notificationTime" class="form-control">
+                            <option value="Just now">Just now</option>
+                            <option value="1 hour ago">1 hour ago</option>
+                            <option value="Today">Today</option>
+                            <option value="Yesterday">Yesterday</option>
+                        </select>
+                    </div>
+                    <div class="admin-notification-actions">
+                        <button id="sendNotificationBtn" class="btn-admin">
+                            <i class="fas fa-paper-plane"></i> Send Notification
+                        </button>
+                        <button id="clearNotificationFormBtn" class="btn-admin">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- [Other content sections remain exactly the same] -->
+
+            <!-- Updated Video Modal -->
+            <div class="video-modal" id="videoModal">
+                <div class="video-modal-content">
+                    <button class="video-modal-close" id="videoModalClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="video-modal-player">
+                        <video id="modalVideoPlayer"></video>
+                        <div class="video-controls">
+                            <button class="control-btn" id="rewind5s">«5s</button>
+                            <button class="control-btn" id="playPause"><i class="fas fa-play"></i></button>
+                            <button class="control-btn" id="forward5s">5s»</button>
+                            <button class="control-btn" id="forward10s">10s»</button>
+                            <div class="time-display">
+                                <span id="currentTime">0:00</span>/<span id="duration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- [Rest of your existing HTML remains exactly the same] -->
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
